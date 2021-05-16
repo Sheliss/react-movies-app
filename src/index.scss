@@ -1,0 +1,147 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+//-----------------------------------
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+* {
+  font-family: 'Roboto', sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+$color-main: #1B3B6F;
+$color-sub: #21295C;
+
+.app__header {
+  display: flex;
+  justify-content: center;
+  background-color: $color-main;
+  margin-bottom: 40px;
+
+  h1 {
+    text-transform: uppercase;
+    margin: 0;
+    padding: 30px 0 30px 0;
+    display: inline-block;
+    color: #fff;
+  }
+}
+
+.search__container {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 40px;
+}
+
+.search__form {
+  display: inline-block;
+
+  .search__input {
+    font-size: 16px;
+    padding: 5px;
+    width: 250px;
+    border: 1px solid $color-main;
+    border-right: 0;
+
+    &:focus {
+      outline: 1px solid $color-sub;
+      border: 1px solid $color-main;
+    }
+  }
+
+  .search__button {
+    font-size: 16px;
+    padding: 5px;
+    text-transform: uppercase;
+    background: transparent;
+    border: 1px solid $color-main;
+    cursor: pointer;
+
+    &:focus {
+      outline: 1px solid $color-sub;
+      border: 1px solid $color-main;
+    }
+  }
+}
+
+.moviesList__container {
+  margin: 0 50px;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 10px 10px;
+  position: relative;
+
+  .errorMessage {
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%);
+  }
+
+  .loadingContainer {
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%);
+  }
+
+}
+
+.movies__container {
+  display: flex;
+  justify-content: space-around;
+
+  .movies__inner {
+    height: max-content;
+    position: relative;
+  }
+
+  .movies__hoverContainer {
+    opacity: 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1000;
+    color: #fff;
+    padding: 20px;
+    background-color: rgba(27, 59, 111, .7);
+    transition: opacity .2s;
+  }
+
+  :hover {
+    .movies__hoverContainer {
+      opacity: 1;
+    }
+  }
+}
+
+.movies__poster {
+  width: 200px;
+  height: 300px;
+
+  img {
+    display: block;
+    object-position: center;
+    width: 100%;
+    height: 100%;
+  }
+}
+
+.movies__name {
+  margin-bottom: 10px;
+}
+
