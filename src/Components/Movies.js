@@ -3,8 +3,14 @@ import placeholder from '../assets/placeholder.jpg'
 
 const DEFAULT_PLACEHOLDER_IMAGE = placeholder;
 
-export default function Movies({movie}) {
+export default function Movies({movie, handleImdb}) {
+    const imdb = movie.imdbID;
+
     const poster = movie.Poster === 'N/A' ? DEFAULT_PLACEHOLDER_IMAGE : movie.Poster;
+
+    const setCurrentImdb = () => {
+        handleImdb(imdb);
+    }
 
     return (
         <div className="movies__container">
@@ -15,8 +21,14 @@ export default function Movies({movie}) {
                     />
                 </div>
                 <div className="movies__hoverContainer">
+                    <div className="movie__top">
                     <h2 className="movies__name">{movie.Title}</h2>
-                    <p className="movie__year">{movie.Year}</p>
+                        <div className="movie__shortInfo">
+                            <p className="movie__type">{movie.Type}</p>
+                            <p className="movie__year">({movie.Year})</p>
+                        </div>
+                    </div>       
+                    <button className="movie__more" onClick={setCurrentImdb}>More info</button>   
                 </div>
             </div>
         </div>

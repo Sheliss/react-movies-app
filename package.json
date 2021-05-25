@@ -1,8 +1,8 @@
 {
-  "name": "movie-search-app",
-  "version": "0.1.0",
+  "name": "react-movies-app",
+  "version": "0.1.1",
   "private": true,
-  "homepage": "http://Sheliss.github.io/movie-search-app",
+  "homepage": "http://sheliss.github.io/react-movies-app",
   "dependencies": {
     "@testing-library/jest-dom": "^5.12.0",
     "@testing-library/react": "^11.2.6",
